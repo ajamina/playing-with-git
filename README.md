@@ -6,7 +6,7 @@ This is a doc on how I think branching can be incorporated more into our current
 
 ## Background
 
-“In the shared repository model, collaborators are granted push access to a single shared repository and topic branches are created when changes need to be made. Pull requests are useful in this model as they initiate code review and general discussion about a set of changes before the changes are merged into the main development branch. This model is more prevalent with small teams and organizations collaborating on private projects.”
+> In the shared repository model, collaborators are granted push access to a single shared repository and topic branches are created when changes need to be made. Pull requests are useful in this model as they initiate code review and general discussion about a set of changes before the changes are merged into the main development branch. This model is more prevalent with small teams and organizations collaborating on private projects.
 
 
 Suppose we are starting with a new project or jumping onto an existing project. There will exist a `master` branch and a parallel `dev` branch. 
