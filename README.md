@@ -55,7 +55,9 @@ which pushes to its now set-up matching remote branch.
 
 Now your code is pushed to the remote branch. You want your code to be merged into the dev branch. Before merging, we should ensure that our work is of sufficient quality. This is what pull requests are for. Rather than merging our own code, we submit a pull request on our commit(s) for a maintainer or a peer to approve our merge. A pull request is basically requesting for someone to *pull* in your changes. The end goal of a pull request is a merge.
 
-Pull requests can be done natively using git, or on GitHub. I have not used git to do a pull request so I do not have any commands to share.
+Pull requests can be done natively using git, or on GitHub. 
+
+The git command for pull requests is `git request-pull`. This command generates a summary of pending changes. I find the GitHub UI for pull requests to be much better to use.
 
 ## Deleting branches
 
