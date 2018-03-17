@@ -57,7 +57,16 @@ Now your code is pushed to the remote branch. You want your code to be merged in
 
 Pull requests can be done natively using git, or on GitHub. 
 
-The git command for pull requests is `git request-pull`. This command generates a summary of pending changes. I find the GitHub UI for pull requests to be much better to use.
+~~The git command for pull requests is `git request-pull`. This command generates a summary of pending changes. I find the GitHub UI for pull requests to be much better to use.~~
+
+To use git to make a pull request, use
+```
+$ git request-pull <start> <url> [<end>]
+```
+For example, in our specific situation, if we wanted to make a pull request to merge our branch into master of this repo, we use
+```
+$ git request-pull branchname https://github.com/stephen29xie/playing-with-git.git master
+```
 
 ## Deleting branches
 
