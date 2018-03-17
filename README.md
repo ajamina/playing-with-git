@@ -1,4 +1,4 @@
-# Shared Repository Model Very Basic Branching Workflow
+# Shared Repository Model Basic Branching Workflow
 
 **This is not a doc about how to use git nor is this a project development model.
 This is a doc on how I think branching can be incorporated more into our current workflow.**
