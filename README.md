@@ -6,13 +6,17 @@ This is a doc on how I think branching can be incorporated more into our current
 
 ## Background
 
+From https://help.github.com/articles/about-collaborative-development-models/ : 
 > In the shared repository model, collaborators are granted push access to a single shared repository and topic branches are created when changes need to be made. Pull requests are useful in this model as they initiate code review and general discussion about a set of changes before the changes are merged into the main development branch. This model is more prevalent with small teams and organizations collaborating on private projects.
 
+## Main branches
 
-Suppose we are starting with a new project or jumping onto an existing project. There will exist a `master` branch and a parallel `dev` branch. 
+Suppose we are starting with a new project or jumping onto an existing project. There will exist a `master` branch and a parallel `dev` branch.
 
 `origin/master` should be the branch where the HEAD points to code that is production-ready and deployable.
 `origin/dev` should be the branch where HEAD points to code that is in a state with the latest development changes ready for the next release/merge with master.
+
+Merges into `origin/master` should be major checkpoints where the project is ready to be deployed or major changes are ready to be added. Think code releases.
 
 Never push directly to `master`. All changes to `master` should be from merging other branches into master. Because the `master` branch should be production-ready and deployable at any time, progress work should not be done here.
 
@@ -50,20 +54,33 @@ $ git push
 ```
 which pushes to its now set-up matching remote branch.
 
+#### Other commands
+```
+$ git branch -a
+```
+to look at all branches (local + remote) and check current branch (the branch with an asterisk).
+
 
 ## Pull Requests
 
 Now your code is pushed to the remote branch. You want your code to be merged into the dev branch. Before merging, we should ensure that our work is of sufficient quality. This is what pull requests are for. Rather than merging our own code, we submit a pull request on our commit(s) for a maintainer or a peer to approve our merge. A pull request is basically requesting for someone to *pull* in your changes. The end goal of a pull request is a merge.
 
-Pull requests can be done natively using git, or on GitHub. The git command generates a summary of pending changes.
+Because we use GitHub here, we can open pull requests in the GitHub interface. There you can choose which branches to merge and the interface provides a nice space for tracking commits and feedback. After opening a pull request, you can push follow-up commits to make more changes until the pull request is closed.
 
-To use git to make a pull request, use
+
+**Side Note**: the git command `git request-pull` is not the same as a GitHub pull request. They have the same motivation, but different functionality.
+
+From the git manual:
+> Generate a request asking your upstream project to pull changes into their tree. The request, printed to the standard output, begins with the branch description, summarizes the changes and indicates from where they can be pulled.
+
+So this function only generates a summary of pending changes ie. a text message. No merging is actually happening. 
+
+With the library `hub` by GitHub, we can initialize pull requests in GitHub directly from the command line.
+
+#### Other commmands
+To merge a branch into your current branch without considering pull requests, simply use
 ```
-$ git request-pull <start> <url> [<end>]
-```
-For example, in our specific situation, if we wanted to make a pull request to merge our branch into master of this repo, we use
-```
-$ git request-pull branchname https://github.com/stephen29xie/playing-with-git.git master
+$ git merge branchname
 ```
 
 ## Deleting branches
@@ -76,4 +93,6 @@ and delete the local branch using
 ```
 $ git branch -d branchname
 ``` 
+You can choose to keep the local branch if you want but make sure to delete the remote branch once you are done with it to minimize clutter.
+
  
