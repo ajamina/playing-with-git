@@ -9,6 +9,9 @@ This is a doc on how I think branching can be incorporated more into our current
 From https://help.github.com/articles/about-collaborative-development-models/ : 
 > In the shared repository model, collaborators are granted push access to a single shared repository and topic branches are created when changes need to be made. Pull requests are useful in this model as they initiate code review and general discussion about a set of changes before the changes are merged into the main development branch. This model is more prevalent with small teams and organizations collaborating on private projects.
 
+### What is a branch?
+A branch is a pointer to a commit. When you branch off a branch, you get a 'snapshot'. Having your own branch means you can commit to the code without affecting the original.
+
 ## Main branches
 
 Suppose we are starting with a new project or jumping onto an existing project. There will exist a `master` branch and a parallel `dev` branch.
@@ -23,8 +26,7 @@ Never push directly to `master`. All changes to `master` should be from merging 
 
 ## Creating branches
 
-You want to start writing code to add to the project. The emphasis of this doc is about **topic branches**. These short-lived branches should be used for bug fixes, features, or any specific work that takes some time. Name it something specific. Do not write something generic like `feature 23`. This makes it less clear what the branch is being used for. 
-
+You want to start writing code to add to the project. The emphasis of this doc is about **topic branches**. These short-lived branches should be used for bug fixes, features, or any specific work that takes some time. Name it something specific. Do not write something generic like `feature 23`. This makes it less clear what the branch is being used for.
  
 Create your own branch using 
 ```
