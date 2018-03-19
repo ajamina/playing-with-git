@@ -70,6 +70,7 @@ Now your code is pushed to the remote branch. You want your code to be merged in
 Because we use GitHub here, we can open pull requests in the GitHub interface. There you can choose which branches to merge and the interface provides a nice space for tracking commits and feedback. After opening a pull request, you can push follow-up commits to make more changes until the pull request is closed.
 
 ![alt text](pull-request-review-page.png "Pull request review page on GitHub")
+Photo from : https://help.github.com/articles/about-pull-requests/
 
 
 **Note**: the git command `git request-pull` is not the same as a GitHub pull request. They have the same motivation, but different functionality.
