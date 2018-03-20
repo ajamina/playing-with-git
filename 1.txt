@@ -1,2 +1,2 @@
 1
-remote edit
+local edit
